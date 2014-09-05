@@ -12,6 +12,7 @@
 		AF8DC1E019BA5E5500D6A1A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF8DC1DE19BA5E5500D6A1A2 /* Main.storyboard */; };
 		AF8DC1E219BA5E5500D6A1A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF8DC1E119BA5E5500D6A1A2 /* Images.xcassets */; };
 		AF8DC1EE19BA5E5600D6A1A2 /* TransitionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DC1ED19BA5E5600D6A1A2 /* TransitionsTests.swift */; };
+		AF8DC1FA19BA611A00D6A1A2 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DC1F919BA611A00D6A1A2 /* TransitionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		AF8DC1E719BA5E5600D6A1A2 /* TransitionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8DC1EC19BA5E5600D6A1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF8DC1ED19BA5E5600D6A1A2 /* TransitionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionsTests.swift; sourceTree = "<group>"; };
+		AF8DC1F919BA611A00D6A1A2 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				AF8DC1DE19BA5E5500D6A1A2 /* Main.storyboard */,
 				AF8DC1E119BA5E5500D6A1A2 /* Images.xcassets */,
 				AF8DC1D819BA5E5500D6A1A2 /* Supporting Files */,
+				AF8DC1F919BA611A00D6A1A2 /* TransitionManager.swift */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8DC1FA19BA611A00D6A1A2 /* TransitionManager.swift in Sources */,
 				AF8DC1DD19BA5E5500D6A1A2 /* ViewController.swift in Sources */,
 				AF8DC1DB19BA5E5500D6A1A2 /* AppDelegate.swift in Sources */,
 			);
@@ -395,6 +399,7 @@
 				AF8DC1F319BA5E5600D6A1A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF8DC1F419BA5E5600D6A1A2 /* Build configuration list for PBXNativeTarget "TransitionsTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +408,7 @@
 				AF8DC1F619BA5E5600D6A1A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
