@@ -12,7 +12,6 @@
 		AF8DC1E019BA5E5500D6A1A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF8DC1DE19BA5E5500D6A1A2 /* Main.storyboard */; };
 		AF8DC1E219BA5E5500D6A1A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF8DC1E119BA5E5500D6A1A2 /* Images.xcassets */; };
 		AF8DC1EE19BA5E5600D6A1A2 /* TransitionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DC1ED19BA5E5600D6A1A2 /* TransitionsTests.swift */; };
-		AF8DC1F819BA5F8C00D6A1A2 /* TransitionMananger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DC1F719BA5F8C00D6A1A2 /* TransitionMananger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +34,6 @@
 		AF8DC1E719BA5E5600D6A1A2 /* TransitionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8DC1EC19BA5E5600D6A1A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF8DC1ED19BA5E5600D6A1A2 /* TransitionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionsTests.swift; sourceTree = "<group>"; };
-		AF8DC1F719BA5F8C00D6A1A2 /* TransitionMananger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionMananger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +78,6 @@
 				AF8DC1DA19BA5E5500D6A1A2 /* AppDelegate.swift */,
 				AF8DC1DC19BA5E5500D6A1A2 /* ViewController.swift */,
 				AF8DC1DE19BA5E5500D6A1A2 /* Main.storyboard */,
-				AF8DC1F719BA5F8C00D6A1A2 /* TransitionMananger.swift */,
 				AF8DC1E119BA5E5500D6A1A2 /* Images.xcassets */,
 				AF8DC1D819BA5E5500D6A1A2 /* Supporting Files */,
 			);
@@ -211,7 +208,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF8DC1F819BA5F8C00D6A1A2 /* TransitionMananger.swift in Sources */,
 				AF8DC1DD19BA5E5500D6A1A2 /* ViewController.swift in Sources */,
 				AF8DC1DB19BA5E5500D6A1A2 /* AppDelegate.swift in Sources */,
 			);
