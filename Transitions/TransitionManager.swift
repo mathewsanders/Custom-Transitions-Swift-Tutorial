@@ -10,15 +10,19 @@ import UIKit
 
 class TransitionManager: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     
+    private var presenting = true
+    
     // MARK: UIViewControllerTransitioningDelegate methods
     
     // what UIViewControllerAnimatedTransitioning object to use for presenting
     func animationControllerForPresentedController(presented: UIViewController!, presentingController presenting: UIViewController!, sourceController source: UIViewController!) -> UIViewControllerAnimatedTransitioning! {
+        self.presenting = true
         return self
     }
     
     // what UIViewControllerAnimatedTransitioning object to use for presenting
     func animationControllerForDismissedController(dismissed: UIViewController!) -> UIViewControllerAnimatedTransitioning!  {
+        self.presenting = false
         return self
     }
     
@@ -48,8 +52,8 @@ class TransitionManager: NSObject, UIViewControllerTransitioningDelegate, UIView
         let offScreenLeft = CGAffineTransformMakeTranslation(container.frame.width, 0)
         let offScreenRight = CGAffineTransformMakeTranslation(-container.frame.width, 0)
         
-        // start the toView to the left of the screen
-        toView.transform = offScreenLeft
+        // set the start location of toView depending if we're presenting or not
+        toView.transform = self.presenting ? offScreenLeft : offScreenRight
         
         // add the both views to our view controller
         container.addSubview(toView)
@@ -65,7 +69,8 @@ class TransitionManager: NSObject, UIViewControllerTransitioningDelegate, UIView
         // using usingSpringWithDamping for a little bounce
         UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.5, options: nil, animations: {
             
-            fromView.transform = offScreenRight
+            // set the end location of fromView depending if we're presenting or not
+            fromView.transform = self.presenting ? offScreenRight : offScreenLeft
             toView.transform = CGAffineTransformIdentity
             
             }, completion: { finished in
