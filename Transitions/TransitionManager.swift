@@ -30,7 +30,7 @@ class TransitionManager: NSObject, UIViewControllerTransitioningDelegate, UIView
     
     // return how many seconds the transition animation should take
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning!) -> NSTimeInterval  {
-        return 0.5
+        return 0.75
     }
     
     // perform the animation(s) to show the transition from one screen to another
@@ -38,6 +38,8 @@ class TransitionManager: NSObject, UIViewControllerTransitioningDelegate, UIView
         
         // get reference to the container view that we should perform the transition in
         let container = transitionContext.containerView()!
+        
+        container.backgroundColor = UIColor.blackColor()
         
         // get references to our 'from' and 'to' view controllers
         let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
@@ -49,11 +51,21 @@ class TransitionManager: NSObject, UIViewControllerTransitioningDelegate, UIView
         let toView = toViewController.view
         
         // set up from 2D transforms that we'll use in the animation
-        let offScreenLeft = CGAffineTransformMakeTranslation(container.frame.width, 0)
-        let offScreenRight = CGAffineTransformMakeTranslation(-container.frame.width, 0)
+        let π : CGFloat = 3.14159265359
+        
+        let offScreenRotateIn = CGAffineTransformMakeRotation(-π/2)
+        let offScreenRotateOut = CGAffineTransformMakeRotation(π/2)
         
         // set the start location of toView depending if we're presenting or not
-        toView.transform = self.presenting ? offScreenLeft : offScreenRight
+        toView.transform = self.presenting ? offScreenRotateIn : offScreenRotateOut
+        
+        // set the anchor point so that rotations happen from the top-left corner
+        toView.layer.anchorPoint = CGPoint(x:0, y:0)
+        fromView.layer.anchorPoint = CGPoint(x:0, y:0)
+        
+        // updating the anchor point also moves the position to we have to move the center position to the top-left to compensate
+        toView.layer.position = CGPoint(x:0, y:0)
+        fromView.layer.position = CGPoint(x:0, y:0)
         
         // add the both views to our view controller
         container.addSubview(toView)
@@ -67,10 +79,10 @@ class TransitionManager: NSObject, UIViewControllerTransitioningDelegate, UIView
         // perform the animation!
         // for this example, just slide the both fromView and toView from left to right at the same time
         // using usingSpringWithDamping for a little bounce
-        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.5, options: nil, animations: {
+        UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1.0, options: nil, animations: {
             
             // set the end location of fromView depending if we're presenting or not
-            fromView.transform = self.presenting ? offScreenRight : offScreenLeft
+            fromView.transform = self.presenting ? offScreenRotateOut : offScreenRotateIn
             toView.transform = CGAffineTransformIdentity
             
             }, completion: { finished in
